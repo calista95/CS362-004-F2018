@@ -819,7 +819,7 @@ void mine()
 
 }
 
-/*End of refactored card functions*/
+/*******End of refactored card functions*******/
 
   //uses switch to select card and perform actions
   switch( card ) 
