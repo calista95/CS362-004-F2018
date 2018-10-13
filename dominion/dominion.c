@@ -643,6 +643,7 @@ int getCost(int cardNumber)
   return -1;
 }
 
+
 int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState *state, int handPos, int *bonus)
 {
   int i;
@@ -662,12 +663,12 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
     nextPlayer = 0;
   }
   
-	
-  //uses switch to select card and perform actions
-  switch( card ) 
-    {
-    case adventurer:
-      while(drawntreasure<2){
+/********Refactored card functions for five cards: **********/
+
+//adventurer
+void adventurer_function()
+{
+	while(drawntreasure<2){
 	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
 	  shuffle(currentPlayer, state);
 	}
@@ -685,10 +686,25 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	state->discard[currentPlayer][state->discardCount[currentPlayer]++]=temphand[z-1]; // discard all cards in play that have been drawn
 	z=z-1;
       }
-      return 0;
+
+}
+//smithy
+void smithy_function()
+{
+	//+3 Cards
+      for (i = 0; i < 3; i++)
+	{
+	  drawCard(currentPlayer, state);
+	}
 			
-    case council_room:
-      //+4 Cards
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+}
+
+//council room
+void council_room_function()
+{
+	//+4 Cards
       for (i = 0; i < 4; i++)
 	{
 	  drawCard(currentPlayer, state);
@@ -708,11 +724,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 			
       //put played card in played card pile
       discardCard(handPos, currentPlayer, state, 0);
-			
-      return 0;
-			
-    case feast:
-      //gain card with cost up to 5
+
+}
+
+//feast 
+void feast_function()
+{
+	//gain card with cost up to 5
       //Backup hand
       for (i = 0; i <= state->handCount[currentPlayer]; i++){
 	temphand[i] = state->hand[currentPlayer][i];//Backup card
@@ -761,14 +779,13 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	temphand[i] = -1;
       }
       //Reset Hand
-      			
-      return 0;
-			
-    case gardens:
-      return -1;
-			
-    case mine:
-      j = state->hand[currentPlayer][choice1];  //store card we will trash
+
+}
+
+//mine
+void mine()
+{
+	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
       if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
@@ -799,7 +816,31 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 	      break;
 	    }
 	}
+
+}
+
+/*End of refactored card functions*/
+
+  //uses switch to select card and perform actions
+  switch( card ) 
+    {
+    case adventurer:
+	adventurer_function();
+        return 0;
 			
+    case council_room:
+	council_room_function();		
+        return 0;
+			
+    case feast:
+       feast_function();			
+       return 0;
+			
+    case gardens:
+      return -1;
+			
+    case mine:
+      mine_function();		
       return 0;
 			
     case remodel:
@@ -829,14 +870,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
       return 0;
 		
     case smithy:
-      //+3 Cards
-      for (i = 0; i < 3; i++)
-	{
-	  drawCard(currentPlayer, state);
-	}
-			
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      smithy_function();
       return 0;
 		
     case village:
