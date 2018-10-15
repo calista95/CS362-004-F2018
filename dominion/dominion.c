@@ -668,11 +668,11 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 //adventurer
 void adventurer_function()
 {
-	while(drawntreasure<2){
-	if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
+	while(drawntreasure<2){ 
+	if (state->deckCount[currentPlayer] == 1){//if the deck is empty we need to shuffle discard and add to deck **BUG: changed <1 to ==1**
 	  shuffle(currentPlayer, state);
 	}
-	drawCard(currentPlayer, state);
+	//drawCard(currentPlayer, state); //**BUG: mute drawCard function
 	cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
 	if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
 	  drawntreasure++;
@@ -694,11 +694,11 @@ void smithy_function()
 	//+3 Cards
       for (i = 0; i < 3; i++)
 	{
-	  drawCard(currentPlayer, state);
+	  //drawCard(currentPlayer, state); //**BUG: do not draw cards
 	}
 			
       //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
+      discardCard(handPos, currentPlayer, state, 1); //**BUG: change 0 to 1
 }
 
 //council room
@@ -711,7 +711,7 @@ void council_room_function()
 	}
 			
       //+1 Buy
-      state->numBuys++;
+      state->numBuys--; //**BUG: instead of incrementing numBuys, decrement it
 			
       //Each other player draws a card
       for (i = 0; i < state->numPlayers; i++)
@@ -739,7 +739,7 @@ void feast_function()
       //Backup hand
 
       //Update Coins for Buy
-      updateCoins(currentPlayer, state, 5);
+      //updateCoins(currentPlayer, state, 5); **BUG: do not call updateCoins
       x = 1;//Condition to loop on
       while( x == 1) {//Buy one card
 	if (supplyCount(choice1, state) <= 0){
@@ -750,7 +750,7 @@ void feast_function()
 	    printf("Cards Left: %d\n", supplyCount(choice1, state));
 	  }
 	}
-	else if (state->coins < getCost(choice1)){
+	else if (state->coins < getCost(choice1)){ 
 	  printf("That card is too expensive!\n");
 
 	  if (DEBUG){
@@ -782,10 +782,55 @@ void feast_function()
 
 }
 
-//mine
-void mine()
+//remodel
+int remodel_function()
 {
 	j = state->hand[currentPlayer][choice1];  //store card we will trash
+
+      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
+	{
+	  return -1;
+	}
+
+      gainCard(choice2, state, 0, currentPlayer);
+
+      //discard card from hand
+      discardCard(handPos, currentPlayer, state, 0);
+
+      //discard trashed card
+      for (i = 0; i < state->handCount[currentPlayer]; i++)
+	{
+	  if (state->hand[currentPlayer][i] == j)
+	    {
+	      discardCard(i, currentPlayer, state, 0);			
+	      break;
+	    }
+	}
+
+      return 0;
+}
+
+/*******End of refactored card functions*******/
+
+  //uses switch to select card and perform actions
+  switch( card ) 
+    {
+    case adventurer:
+	adventurer_function();
+        return 0;
+			
+    case council_room:
+	council_room_function();		
+        return 0;
+			
+    case feast:
+       feast_function();			
+       return 0;
+			
+    case gardens:
+      return -1;
+    case mine:
+      	j = state->hand[currentPlayer][choice1];  //store card we will trash
 
       if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
@@ -817,58 +862,10 @@ void mine()
 	    }
 	}
 
-}
-
-/*******End of refactored card functions*******/
-
-  //uses switch to select card and perform actions
-  switch( card ) 
-    {
-    case adventurer:
-	adventurer_function();
-        return 0;
-			
-    case council_room:
-	council_room_function();		
-        return 0;
-			
-    case feast:
-       feast_function();			
-       return 0;
-			
-    case gardens:
-      return -1;
-			
-    case mine:
-      mine_function();		
       return 0;
-			
     case remodel:
-      j = state->hand[currentPlayer][choice1];  //store card we will trash
-
-      if ( (getCost(state->hand[currentPlayer][choice1]) + 2) > getCost(choice2) )
-	{
-	  return -1;
-	}
-
-      gainCard(choice2, state, 0, currentPlayer);
-
-      //discard card from hand
-      discardCard(handPos, currentPlayer, state, 0);
-
-      //discard trashed card
-      for (i = 0; i < state->handCount[currentPlayer]; i++)
-	{
-	  if (state->hand[currentPlayer][i] == j)
-	    {
-	      discardCard(i, currentPlayer, state, 0);			
-	      break;
-	    }
-	}
-
-
-      return 0;
-		
+	remodel_function();
+        return 0;
     case smithy:
       smithy_function();
       return 0;
