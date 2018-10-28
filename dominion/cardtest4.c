@@ -32,7 +32,17 @@ int main()
 		//check preconditions
 		int cardsBefore = numHandCards(G); //save number of cards on hand before playing Great Hall
 		int actionsBefore = G->numActions; //save number of actions before playing Great Hall
-		cardEffect(16,1,2,3,G,1,bonus); //play Great Hall card
+		//play Great Hall card
+		if (i%2==0)
+		{
+			printf("Testing in cardEffect: ");
+			cardEffect(16,1,2,3,G,1,bonus); 
+		}
+		else
+		{
+			printf("Testing ing greatHallFunction: ");
+			greatHallFunction(G, 1);
+		}
 		//check if card card stays the same (plus 1 discard 1 gives a cumulative 0 change)
 		printf("Testing for correct number of cards in hand: ");
 		if (numHandCards(G) == cardsBefore)
