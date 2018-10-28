@@ -13,7 +13,7 @@
 int main()
 {
 	//set up game
-	int i,j;
+	int i;
 	int seed=1000;
 	int numPlayers=4;
 	int b = 1;
@@ -26,7 +26,7 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 	printf("\n\n*****Testing card: Village*****\n\n");
 
 	//each player (4 players total) will play the village card 3 times
-	for (int i=0; i<12; i++)
+	for (i=0; i<12; i++)
 	{
 		printf("Testing player %i's turn: \n", whoseTurn(G)+1);
 		//check preconditions

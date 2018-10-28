@@ -13,7 +13,7 @@ int main()
 {
 	
 	//set up game
-	int i,j;
+	int i;
 	int seed=1000;
 	int numPlayers=4;
 	int b = 2;
@@ -27,7 +27,7 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 
 	//*********testing**************
 	//each player out of the 4 players will play Smithy 5 times
-	for (int i=0; i<20; i++)
+	for (i=0; i<20; i++)
 	{
 		printf("Testing player %i's turn: ", whoseTurn(G));
 			

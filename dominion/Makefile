@@ -27,6 +27,26 @@ interface.o: interface.h interface.c
 unitTest1: unittest1.c dominion.o rngs.o
 	gcc -o unitTest1 -g unittest1.c dominion.o rngs.o $(CFLAGS)
 
+unitTest2: unittest2.c dominion.o rngs.o
+	gcc -o unitTest2 -g unittest2.c dominion.o rngs.o $(CFLAGS)
+
+unitTest3: unittest3.c dominion.o rngs.o
+	gcc -o unitTest3 -g unittest3.c dominion.o rngs.o $(CFLAGS)
+
+unitTest4: unittest4.c dominion.o rngs.o
+	gcc -o unitTest4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
+
+cardTest1: cardTest1.c dominion.o rngs.o
+	gcc -o cardTest1 -g cardtest1.c dominion.o rngs.o $(CFLAGS)
+
+cardTest2: cardTest1.c dominion.o rngs.o
+	gcc -o cardTest2 -g cardtest2.c dominion.o rngs.o $(CFLAGS)
+
+cardTest3: cardTest3.c dominion.o rngs.o
+	gcc -o cardTest3 -g cardtest3.c dominion.o rngs.o $(CFLAGS)
+
+cardTest4: cardTest4.c dominion.o rngs.o
+	gcc -o cardTest4 -g cardtest4.c dominion.o rngs.o $(CFLAGS)
 
 
 runtests: testDrawCard 

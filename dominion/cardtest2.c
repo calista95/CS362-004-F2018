@@ -27,7 +27,7 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
  	initializeGame(numPlayers,k,seed,G);
 
 	//testing for 4 players: each player plays adventure card for 3 rounds total
-	for (int i=0; i<12; i++)
+	for (i=0; i<12; i++)
 	{
 		printf("Testing for player %i:\n", whoseTurn(G));
 		//use Adventurer card
