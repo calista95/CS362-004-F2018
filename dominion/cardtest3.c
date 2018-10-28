@@ -32,7 +32,17 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 		//check preconditions
 		int cardsBefore = numHandCards(G); //save number of cards on hand before playing village
 		int actionsBefore = G->numActions; //save number of actions before playing village
-		cardEffect(14,1,2,3,G,1,bonus); //play village card
+		//play village card
+		if (i%2 ==0)
+		{
+			cardEffect(14,1,2,3,G,1,bonus);
+			printf("Test in cardEffect: ");
+		}
+		else
+		{
+			villageFunction(G, 1);
+			printf("Test in villageFunction: ");
+		}
 		//check if card card stays the same (plus 1 discard 1 gives a cumulative 0 change)
 		printf("Testing for correct number of cards in hand: ");
 		if (numHandCards(G) == cardsBefore)
