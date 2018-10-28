@@ -30,10 +30,19 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 	for (int i=0; i<20; i++)
 	{
 		printf("Testing player %i's turn: ", whoseTurn(G));
-		
+			
 		int currentNumHand = numHandCards(G);
 		//play smithy card
-		cardEffect(13,1,2,3,G,1,bonus);
+		if (i%2==0) //even round
+		{
+			printf("Test in cardEffect: ");
+			cardEffect(13,1,2,3,G,1,bonus);
+		}
+		else
+		{
+			printf("Test in smithyFunction: ");
+		       smithyFunction(G, 1);	
+		}
 
 		if (currentNumHand + 2 == numHandCards(G) )
 			printf("Pass\n");
