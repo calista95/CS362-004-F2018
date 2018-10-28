@@ -659,7 +659,7 @@ int smithyFunction(struct gameState*state, int handPos)
 
 }
 
-int adventureFunction(struct gameState*state)
+int adventurerFunction(struct gameState*state)
 {
 	 int drawntreasure=0;
 	 int currentPlayer = whoseTurn(state);

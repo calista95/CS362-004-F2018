@@ -31,23 +31,31 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 	{
 		printf("Testing for player %i:\n", whoseTurn(G));
 		//use Adventurer card
-		cardEffect(7, 1, 1, 1, G, 1, bonus);
-	
+		if (i%2==0)
+		{
+			printf("Test in cardEffect: ");
+			cardEffect(7, 1, 1, 1, G, 1, bonus);
+		}
+		else
+		{
+			printf("Test in adventurerFunction: ");
+			adventurerFunction(G);
+		}
 		int treasureCards=0;
 		//check that two treasure cards have been found in the deck(#4,5,6)
-		for (i=0; i<MAX_DECK; i++)
+		for (j=0; j<MAX_DECK; j++)
 		{
-			if (G->deck[0][i] == 4 || G->deck[0][i] == 5 || G->deck[0][i] == 6)
+			if (G->deck[i][j] == 4 || G->deck[i][j] == 5 || G->deck[i][j] == 6)
 			treasureCards++;
 		}
-	
+
 		int treasureHand=0;
 		if (treasureCards >=2) //we have at least 2 treasure cards
 		{
 			//confirm that they are in player's hand
-			for (i=0; i<MAX_DECK; i++)
+			for (j=0; j<MAX_DECK; j++)
 			{
-				if (G->hand[0][i] == 4 || G->hand[0][i] == 5 || G->hand[0][i] == 6) 
+				if (G->hand[i][j] == 4 || G->hand[i][j] == 5 || G->hand[i][j] == 6) 
 					treasureHand++;		
 			}
 			if (treasureHand >=2)
@@ -55,15 +63,13 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 			else
 				printf("Testing at least 2 treasure cards in hand: Fail\n");
 		}
-
-		//check that discard pile is empty
+		//check that discard pile is not empty
 		if (G->discardCount[0] ==0)
-			printf("Testing for empty discard pile: Pass\n");
-		else
 			printf("Testing for empty discard pile: Fail\n");
+		else
+			printf("Testing for empty discard pile: Pass\n");
 
 		endTurn(G);
 	}
-
 	return 0;
 }

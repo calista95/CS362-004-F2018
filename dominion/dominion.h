@@ -131,7 +131,7 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 
 //refactored functions
 int smithyFunction(struct gameState*state, int handPos);
-int adventureFunction(struct gameState*state);
+int adventurerFunction(struct gameState*state);
 int villageFunction(struct gameState*state, int handPos);
 int greatHallFunction(struct gameState*state, int handPos);
 
