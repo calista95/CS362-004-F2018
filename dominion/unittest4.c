@@ -13,11 +13,9 @@
 int main()
 {
 	//setup
-	int i,j,n;
+	int i;
 	int seed = 1000;
 	int numPlayers=4;
-	int b=1;
-	int*bonus=&b;
 
 	//default card set
 	int k[10] = {adventurer, council_room, feast, gardens, mine 
@@ -29,7 +27,7 @@ int main()
 
 	printf("\n\n*****Testing function: whoseTurn() : *****\n\n");
 	int who = 0;
-	for (int i=0; i<12; i++)
+	for (i=0; i<12; i++)
 	{
 		printf("Testing player %i's turn: ", who+1);
 		if (who == whoseTurn(G))

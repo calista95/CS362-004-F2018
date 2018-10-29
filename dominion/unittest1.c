@@ -13,7 +13,7 @@
 int main()
 {
 	 //setup
-	 int i,j;
+	 int i;
 	 int seed = 1000;
 
 	//default card set
@@ -42,7 +42,7 @@ int main()
 	 */
 	//printf("Testing for correct number of players:\n");
 
-	for (int i=-1; i<10; i++) 
+	for (i=-1; i<10; i++) 
 	{
 		printf("Testing for correct number of players:\n");
 		printf("Test %i: number of players is currrently %i: ", i+2,i);

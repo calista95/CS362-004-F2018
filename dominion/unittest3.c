@@ -30,7 +30,7 @@ int main()
 	for (i=0; i<15; i++)
 	{
 		int maxSupply = supplyCount(i, G); //store the maximum supply available	
-		int currentSupply = supplyCount(i, G);	//start out with the maximum number of units we have for a card
+		//int currentSupply = supplyCount(i, G);	//start out with the maximum number of units we have for a card
 		for (j=1; j<maxSupply+2; j++)
 		{
 			printf("Buying card %i: ", i);

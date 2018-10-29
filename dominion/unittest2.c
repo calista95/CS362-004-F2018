@@ -13,7 +13,7 @@
 int main()
 {
 	 //setup
-	 int i;
+	 int i,j;
 	 int seed = 1000;
 	 int numPlayer = 2;
 	 int k[10] = {adventurer, council_room, feast, gardens, mine
@@ -24,81 +24,57 @@ int main()
 
 	printf("Testing buyCard() : \n");
 		
-	for (int i=0; i<27; i++) //for i'th card
+	for (i=0; i<27; i++) //for i'th card
 		{
 			int cost = getCost(i);
 			int numBuys = G->numBuys;
 			int currentMoney = G->coins;
 			int supply = supplyCount(i, G); //supply count of specified card
-			printf("cost: %i\n", cost);
-			printf("current: %i\n", currentMoney);
-
-			printf("Testing for sufficient amount of money: ");
-			if (cost > currentMoney) //check that cost is enough
+			
+			if (cost <= currentMoney && numBuys >=1 && supply >=0)
 				{
-					if (buyCard(i, G) == -1)
+					printf("Testing a successful buy: ");
+					if (buyCard(i, G) ==0)
 					{
 						printf("Pass\n");
-						printf("Testing for sufficient number of buys: ");
-						if (numBuys <=0)
-						{
-							if (buyCard(i, G) == -1)
-							printf("Pass\n");
-							else
+						printf("Testing if new card is successfully added to user stack: ");
+						int found=0;
+						for (j=0; j<MAX_DECK; j++)
+							{
+								if (i==G->discard[G->whoseTurn][j])
+									{
+										found=1;
+										break;
+									}
+
+							}		
+						if (found==0)
 							printf("Fail\n");
-						}
-			else if (numBuys >=1)
-			{
-					if (buyCard(i, G) == 0)
-						printf("Pass\n");
+						else if (found==1)
+							printf("Pass\n");
+					}
 					else
 						printf("Fail\n");
-			}
 
-					}	
-					else
-						printf("Fail\n");
-				}
-			else if (cost <= currentMoney)
+				}	
+			else
 				{
-					if (buyCard(i, G) == 0)
+					printf("Testing an unsuccessful buy: ");
+					if (buyCard(i,G) == -1)
 						printf("Pass\n");
 					else
 						printf("Fail\n");
-
 				}
-			
-			printf("Testing for sufficient number of buys: ");
-			if (numBuys <=0)
-			{
-					if (buyCard(i, G) == -1)
-						printf("Pass\n");
-					else
-						printf("Fail\n");
-			}
-			else if (numBuys >=1)
-			{
-					if (buyCard(i, G) == 0)
-						printf("Pass\n");
-					else
-						printf("Fail\n");
-			}
 
-			printf("Testing for card supply: ");
-			if (supply <=0)
-			{
-					if (buyCard(i, G) == -1)
-						printf("Pass\n");
-					else
-						printf("Fail\n");
-			}
-			else if (supply >=1)
-			{
-					if (buyCard(i, G) == 0)
-						printf("Pass\n");
-					else
-						printf("Fail\n");
-			}
+			//set testing conditions for next round
+			if (i%2==0) //if even round, increment number of buys
+				G->numBuys++;
+			if (i%3==0) //if round divisible by 3, increment number of coins
+				G->coins+=2;
+			if (i%4==0) //if round divisible by 4, switch player
+				endTurn(G);
+			//always increment actions so we can buy another card
+			G->numActions++;
 			
 		}
 
