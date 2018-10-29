@@ -41,21 +41,21 @@ int k[10] = {adventurer, council_room, feast, gardens, mine
 			printf("Test in adventurerFunction: ");
 			adventurerFunction(G);
 		}
+		
 		int treasureCards=0;
 		//check that two treasure cards have been found in the deck(#4,5,6)
 		for (j=0; j<MAX_DECK; j++)
 		{
-			if (G->deck[i][j] == 4 || G->deck[i][j] == 5 || G->deck[i][j] == 6)
+			if (G->deck[whoseTurn(G)][j] == 4 || G->deck[whoseTurn(G)][j] == 5 || G->deck[whoseTurn(G)][j] == 6)
 			treasureCards++;
 		}
-
 		int treasureHand=0;
 		if (treasureCards >=2) //we have at least 2 treasure cards
 		{
 			//confirm that they are in player's hand
 			for (j=0; j<MAX_DECK; j++)
 			{
-				if (G->hand[i][j] == 4 || G->hand[i][j] == 5 || G->hand[i][j] == 6) 
+				if (G->hand[whoseTurn(G)][j] == 4 || G->hand[whoseTurn(G)][j] == 5 || G->hand[whoseTurn(G)][j] == 6) 
 					treasureHand++;		
 			}
 			if (treasureHand >=2)

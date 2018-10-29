@@ -1,0 +1,469 @@
+
+
+*****Testing function: initializeGame() : *****
+
+Testing for correct number of players:
+Test 1: number of players is currrently -1: Pass
+Testing for correct number of players:
+Test 2: number of players is currrently 0: Pass
+Testing for correct number of players:
+Test 3: number of players is currrently 1: Pass
+Testing for correct number of players:
+Test 4: number of players is currrently 2: 0
+Pass: number of players falls within correct range
+Testing for non-duplicate cards: 
+Testing set 1: Pass
+Testing set 2: Pass
+Testing set 2: Pass
+Testing for correct number of victory cards: Pass
+Testing for correct number of treasure cards: Pass
+Testing for correct number of players:
+Test 5: number of players is currrently 3: 0
+Pass: number of players falls within correct range
+Testing for non-duplicate cards: 
+Testing set 1: Pass
+Testing set 2: Pass
+Testing set 2: Pass
+Testing for correct number of victory cards: Pass
+Testing for correct number of treasure cards: Pass
+Testing for correct number of players:
+Test 6: number of players is currrently 4: 0
+Pass: number of players falls within correct range
+Testing for non-duplicate cards: 
+Testing set 1: Pass
+Testing set 2: Pass
+Testing set 2: Pass
+Testing for correct number of victory cards: Pass
+Testing for correct number of treasure cards: Pass
+Testing for correct number of players:
+Test 7: number of players is currrently 5: Pass
+Testing for correct number of players:
+Test 8: number of players is currrently 6: Pass
+Testing for correct number of players:
+Test 9: number of players is currrently 7: Pass
+Testing for correct number of players:
+Test 10: number of players is currrently 8: Pass
+Testing for correct number of players:
+Test 11: number of players is currrently 9: Pass
+Testing buyCard() : 
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing a successful buy: Pass
+Testing if new card is successfully added to user stack: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+Testing an unsuccessful buy: Pass
+
+
+*****Testing function: supplyCount() : *****
+
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: enough cards in supply: Pass
+Buying card 0: not enough cards in supply: Pass
+Buying card 0: not enough cards in supply: Pass
+Buying card 0: not enough cards in supply: Pass
+Buying card 0: not enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: enough cards in supply: Pass
+Buying card 1: not enough cards in supply: Pass
+Buying card 1: not enough cards in supply: Pass
+Buying card 1: not enough cards in supply: Pass
+Buying card 1: not enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: enough cards in supply: Pass
+Buying card 2: not enough cards in supply: Pass
+Buying card 2: not enough cards in supply: Pass
+Buying card 2: not enough cards in supply: Pass
+Buying card 2: not enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: enough cards in supply: Pass
+Buying card 3: not enough cards in supply: Pass
+Buying card 3: not enough cards in supply: Pass
+Buying card 3: not enough cards in supply: Pass
+Buying card 3: not enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: enough cards in supply: Pass
+Buying card 4: not enough cards in supply: Pass
+Buying card 4: not enough cards in supply: Pass
+Buying card 4: not enough cards in supply: Pass
+Buying card 4: not enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: enough cards in supply: Pass
+Buying card 5: not enough cards in supply: Pass
+Buying card 5: not enough cards in supply: Pass
+Buying card 5: not enough cards in supply: Pass
+Buying card 5: not enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: enough cards in supply: Pass
+Buying card 6: not enough cards in supply: Pass
+Buying card 6: not enough cards in supply: Pass
+Buying card 6: not enough cards in supply: Pass
+Buying card 6: not enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: enough cards in supply: Pass
+Buying card 7: not enough cards in supply: Pass
+Buying card 7: not enough cards in supply: Pass
+Buying card 7: not enough cards in supply: Pass
+Buying card 7: not enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: enough cards in supply: Pass
+Buying card 8: not enough cards in supply: Pass
+Buying card 8: not enough cards in supply: Pass
+Buying card 8: not enough cards in supply: Pass
+Buying card 8: not enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: enough cards in supply: Pass
+Buying card 9: not enough cards in supply: Pass
+Buying card 9: not enough cards in supply: Pass
+Buying card 9: not enough cards in supply: Pass
+Buying card 9: not enough cards in supply: Pass
+
+
+*****Testing function: whoseTurn() : *****
+
+Testing player 1's turn: Pass
+Testing player 2's turn: Pass
+Testing player 3's turn: Pass
+Testing player 4's turn: Pass
+Testing player 1's turn: Pass
+Testing player 2's turn: Pass
+Testing player 3's turn: Pass
+Testing player 4's turn: Pass
+Testing player 1's turn: Pass
+Testing player 2's turn: Pass
+Testing player 3's turn: Pass
+Testing player 4's turn: Pass
+
+
+*****Testing card: Smithy*****
+
+Testing player 0's turn: Test in cardEffect: Pass
+Testing player 1's turn: Test in smithyFunction: Pass
+Testing player 2's turn: Test in cardEffect: Pass
+Testing player 3's turn: Test in smithyFunction: Pass
+Testing player 0's turn: Test in cardEffect: Pass
+Testing player 1's turn: Test in smithyFunction: Pass
+Testing player 2's turn: Test in cardEffect: Pass
+Testing player 3's turn: Test in smithyFunction: Pass
+Testing player 0's turn: Test in cardEffect: Pass
+Testing player 1's turn: Test in smithyFunction: Pass
+Testing player 2's turn: Test in cardEffect: Pass
+Testing player 3's turn: Test in smithyFunction: Pass
+Testing player 0's turn: Test in cardEffect: Fail
+Testing player 1's turn: Test in smithyFunction: Fail
+Testing player 2's turn: Test in cardEffect: Fail
+Testing player 3's turn: Test in smithyFunction: Fail
+Testing player 0's turn: Test in cardEffect: Fail
+Testing player 1's turn: Test in smithyFunction: Fail
+Testing player 2's turn: Test in cardEffect: Fail
+Testing player 3's turn: Test in smithyFunction: Fail
+
+
+*****Testing card: Adventurer*****
+
+Testing for player 0:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Fail
+Testing for player 1:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 2:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 3:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 0:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Fail
+Testing for player 1:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 2:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 3:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 0:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 1:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 2:
+Test in cardEffect: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+Testing for player 3:
+Test in adventurerFunction: Testing at least 2 treasure cards in hand: Pass
+Testing for empty discard pile: Pass
+
+
+*****Testing card: Village*****
+
+Testing player 1's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 2's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 3's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 4's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 1's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 2's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 3's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 4's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 1's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 2's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 3's turn: 
+Test in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+Testing player 4's turn: 
+Test in villageFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 3 Pass
+
+
+*****Testing card: Great Hall*****
+
+Testing player 1's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 2's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 3's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 4's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 1's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 2's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 3's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 4's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 1's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 2's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 3's turn: 
+Testing in cardEffect: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+Testing player 4's turn: 
+Testing ing greatHallFunction: Testing for correct number of cards in hand: Pass
+Testing for actions after effect: 2 Pass
+File 'dominion.c'
+Lines executed:46.75% of 584
+Creating 'dominion.c.gcov'
+
