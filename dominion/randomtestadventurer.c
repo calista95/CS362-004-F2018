@@ -1,11 +1,11 @@
 /*
  * Card tested: Adventurer (card #7)
  * Expected behavior: Keep flipping deck until you have two treasure cards, then put those
- * two cards in your hand, and discard the exposed cards
- * Input: 
- * Dependencies: deckCount, discardCount
-*/
-
+ * two cards in your hand
+ * and discard the exposed cards
+ * Input: set number of cards in hand, set number of cards in deck, empty discard pile
+ * Output: two additional cards in hand, -n number of cards in deck, +n number of cards in discard pile
+ */
 #include "dominion.h"
 #include "dominion_helpers.h"
 #include "rngs.h"
@@ -15,57 +15,63 @@
 #include <assert.h>
 #include <math.h>
 
+
 int main()
 {
-	    int i,j;
-	    int seed;
-	    int numPlayers;
-	    int b = 1;
-	    int *bonus=&b;
- 	    int k[10] = {adventurer, council_room, feast, gardens, mine
-                       , remodel, smithy, village, baron, great_hall};
-            struct gameState *G = newGame();
+	
+	//set up game
+	int i,j;
+	int seed;
+	int numPlayers;
+	int k[10] = {adventurer, council_room, feast, gardens, mine
+	                    , remodel, smithy, village, baron, great_hall};
+	int b = 1;
+	int *bonus = &b;
+	int pass=0;
+	int fail=0;
+	
+	printf("\n\n*****Testing card: Adventurer*****\n\n");
+	for (i=0; i<100; i++)
+	{
+		//game setup with random variables	
+		int seed=rand()%1000;
+		numPlayers=rand()%4+1;
+ 		struct gameState *G = newGame();
+ 		initializeGame(numPlayers,k,seed,G);
 
-	    for (i=0; i<10; i++)
-	    	{
-			printf("Test %i:\n", i+1);
-			int pass=0;
-	    		int fail=0;
+		int player = G->whoseTurn;
 
-			seed = rand()%1000; //random number between 1-1000
-			numPlayers = rand()%4+1; //random number between 1-4
-            		initializeGame(numPlayers,k,seed,G);
-			
-			for (j=0; j<100; j++)
-				{
-					int currentPlayer = whoseTurn(G);
-					
-					int randomDeckCount = rand()%10;
-					if (randomDeckCount ==1)
-						G->deckCount[currentPlayer]=0;
-					else
-					{
-						randomDeckCount = rand()%MAX_DECK;
-						G->deckCount[currentPlayer]=randomDeckCount;
-					}
-					/*
-					int randomHandCount = rand()%MAX_HAND;
-					G->handCount[currentPlayer] = randomHandCount;
-					*/
-					int randomDiscardCount = rand()%MAX_HAND;
-					G->discardCount[currentPlayer] = randomDiscardCount;
-					
-					int result = cardEffect(7,1,1,1,G,1,bonus); //play card
-					if (result==0) //success
-						pass++;
-					else //failed test
-						fail++;
+		int randomHand = rand()%1000;
+		G->handCount[player]=randomHand;
 
-					endTurn(G);
-				}
-				
-			printf("Passed tests: %i\n", pass);
-			printf("Failed tests: %i\n", fail);
-		}
+		int randomDeck = rand()%1000;
+		G->deckCount[player]=randomDeck;
+
+		//int randomDiscard = rand()%1000;
+		//G->discardCount[player]= randomDiscard;
+
+		cardEffect(7, 1, 1, 1, G, 1, bonus);
+
+		//test 1: we should have 2 more cards in our hand than we started with
+		
+		if (randomHand+2 == G->handCount[player])
+			pass++;
+		else
+			fail++;
+		
+		//test 2: the deck count added to the discard pile count should equal the original deck count
+		if (randomDeck - G->deckCount[player] -2 == G->discardCount[player])
+			pass++;
+		else
+			fail++;
+
+		endTurn(G);
+
+	}	
+
+	printf("Here are your results: \n");
+	printf("Pass: %i\n", pass);
+	printf("Fail: %i\n", fail);
+
 	return 0;
-}	
+}

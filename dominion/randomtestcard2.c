@@ -59,7 +59,7 @@ int main()
 			}
 							
 		}
-	printf("Here are your results: %i\n");
+	printf("Here are your results:\n");
 	printf("Pass: %i\n", pass);
 	printf("Fail: %i\n", fail);
 }
