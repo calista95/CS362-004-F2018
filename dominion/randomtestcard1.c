@@ -50,7 +50,12 @@ int main()
 				cardEffect(14,1,1,1,G,1,bonus);
 
 				//testing: we should expect to see number of actions incremented by 2 and cards on hand to stay the same (gain 1, discard 1)
-				if (G->numActions == randomActions+2 || G->handCount[G->whoseTurn] == randomCards)
+				if (G->numActions == randomActions+2)
+					pass++;
+				else
+					fail++;
+
+				if (G->handCount[G->whoseTurn] == randomCards)
 					pass++;
 				else
 					fail++;

@@ -2,7 +2,7 @@
  * Card randomly tested: Great Hall
  * Expected behavior: Draw one card, increment one action, discard played card from hand
  * Input: set number of cards and actions
- * Output: change number of actions by +2, number of cards should stay exactly the same because there is no net change 
+ * Output: change number of actions by +1, number of cards should stay exactly the same because there is no net change 
  */
 
 #include "dominion.h"
@@ -49,8 +49,13 @@ int main()
 
 				cardEffect(16,1,1,1,G,1,bonus);
 
-				//testing: we should expect to see number of actions incremented by 2 and cards on hand to stay the same (gain 1, discard 1)
-				if (G->numActions == randomActions+1 || G->handCount[G->whoseTurn] == randomCards)
+				//testing: we should expect to see number of actions incremented by 1 and cards on hand to stay the same (gain 1, discard 1)
+				if (G->numActions == randomActions+1)
+					pass++;
+				else
+					fail++;
+
+				if (G->handCount[G->whoseTurn] == randomCards)
 					pass++;
 				else
 					fail++;
