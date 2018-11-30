@@ -646,7 +646,6 @@ int getCost(int cardNumber)
 
 int adventurerRefactor(int drawntreasure, struct gameState *state, int currentPlayer, int temphand[MAX_HAND], int z)
 {
-	printf("in adventurer\n");	
     int cardDrawn;
     while(drawntreasure<2){
   if (state->deckCount[currentPlayer] <1){//if the deck is empty we need to shuffle discard and add to deck
@@ -671,11 +670,11 @@ int adventurerRefactor(int drawntreasure, struct gameState *state, int currentPl
 
 int council_roomRefactor(int currentPlayer, struct gameState *state, int handPos)
 {
-   //+4 Cards <---This is what we would normally expect, but it is missing 
+   //+4 Cards
  /*     for (int i = 0; i < 4; i++)
   {
     drawCard(currentPlayer, state);
-  }*/ 
+  }*/ //bug
       
       //+1 Buy
       state->numBuys++;
